@@ -1,0 +1,10 @@
+d=dir;
+fn={d.Stories.zip};
+list=fn
+fprintf('----------------------------------\n')
+fprintf('Welcome to Children Story Analyser\n')
+fprintf('----------------------------------\n')
+fprintf('Create visualization[1]\n')
+fprintf(' Create story Report[2]\n')
+userChoice=input('Select Action:');
+userStory=listdlg('List String',list 'Selction Mode','Single')
