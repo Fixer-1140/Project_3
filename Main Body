@@ -1,10 +1,35 @@
-d=dir;
-fn={d.Stories.zip};
-list=fn
+list={'Jack and The Beanstalk','Peter Pan','Snow Queen', 'Velveteen Rabbit'};
+%creates list of stories
 fprintf('----------------------------------\n')
 fprintf('Welcome to Children Story Analyser\n')
 fprintf('----------------------------------\n')
+%prints initial greeting
 fprintf('Create visualization[1]\n')
+%prints how to create visualization
 fprintf(' Create story Report[2]\n')
+%prints how to create a report
 userChoice=input('Select Action:');
-userStory=listdlg('List String',list 'Selction Mode','Single')
+%generates user input on choice
+userStory=listdlg('ListString',list, 'SelectionMode','Single');
+%has the user select the story from the list
+if userStory==1
+    %if the user picked Jack and the Beanstalk, opens it
+    userStory= fopen('jackBeanStalk.txt')
+elseif userStory==2
+    %if the user picked Peter Pan, opens it
+    userStory=fopen('peterPan,txt')
+elseif userStory==3
+    %if the user picked Snow Queen, opens it
+    userStory=('snowQueen.txt')
+elseif userStory==4
+    %if the user picked velveteen rabbit, opens it
+    userStory=('velveteenRabbit.txt')
+end
+if userChoice==1
+   for i:length(userStory)
+   stopWords=isStopWord(____)
+   end
+   for i:length(userStory)
+       newWords=cleanWord(____)
+else
+    fprintf('Invalid Input. Terminating the Program'
