@@ -27,9 +27,24 @@ elseif userStory==4
 end
 if userChoice==1
    for i:length(userStory)
-   stopWords=isStopWord(____)
+   theWords=isStopWord(userStory);
    end
-   for i:length(userStory)
-       newWords=cleanWord(____)
+   for i:length(theWords)
+       newWords=cleanWord(theWords);
+   end
+   end
+   for i:length(newWords)
+       uniqueWords=getUniqueWords(newWords)
+   end
+   end
+   for i:length(uniqueWords)
+       topTenWords=getTopTenWords(uniqueWords);
+   end
+   wordcloud({uniqueWords.word},[uniqueWords.frequency]);
+   
+   
+   
+   
+   
 else
-    fprintf('Invalid Input. Terminating the Program'
+    fprintf('Invalid Input. Terminating the Program')
