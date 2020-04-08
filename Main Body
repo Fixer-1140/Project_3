@@ -1,3 +1,7 @@
+%Zachary Boulton, ztboulto  and  Griffin Cook, gvcook
+%4/8/2020
+%Sections: 206 and 
+%Project3: Story Analyzer, 2020 Spring
 list={'Jack and The Beanstalk','Peter Pan','Snow Queen', 'Velveteen Rabbit'};
 %creates list of stories
 fprintf('----------------------------------\n')
@@ -29,9 +33,11 @@ listStopWords=fopen('stopWords.txt');
 %opens the list of stop words
    for i=1:length(userStory)
    theWords=isStopWord(listStopWords,userStory);
+    if theWords==1
+        %need to figure out how to filter it out
    %finds all of the stop words
    end
-   fclose(listStopWords)
+   end
    for i=1:length(theWords)
        newWords=cleanWord(theWords);
        %cleans all the words
@@ -59,3 +65,4 @@ listStopWords=fopen('stopWords.txt');
 else
     fprintf('Invalid Input. Terminating the Program')
    end
+    
