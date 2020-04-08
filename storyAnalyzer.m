@@ -25,8 +25,8 @@ fprintf(' Create story Report[2]\n')
 userChoice=input('Select Action:');
 %generates user input on choice
 
-if userChoice~=1 || userChoice~=2
-    fprintf('Invalid Input. Terminating the Program')
+if ~(userChoice==1 || userChoice==2)
+    fprintf('Invalid Input. Terminating the Program\n')
 else
     userStory=listdlg('ListString',list, 'SelectionMode','Single');
     %has the user select the story from the list
