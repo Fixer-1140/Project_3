@@ -14,37 +14,48 @@ userStory=listdlg('ListString',list, 'SelectionMode','Single');
 %has the user select the story from the list
 if userStory==1
     %if the user picked Jack and the Beanstalk, opens it
-    userStory= fopen('jackBeanStalk.txt')
+    userStory= fopen('jackBeanStalk.txt');
 elseif userStory==2
     %if the user picked Peter Pan, opens it
-    userStory=fopen('peterPan,txt')
+    userStory=fopen('peterPan,txt');
 elseif userStory==3
     %if the user picked Snow Queen, opens it
-    userStory=('snowQueen.txt')
+    userStory=('snowQueen.txt');
 elseif userStory==4
     %if the user picked velveteen rabbit, opens it
-    userStory=('velveteenRabbit.txt')
+    userStory=('velveteenRabbit.txt');
 end
-if userChoice==1
-   for i:length(userStory)
-   theWords=isStopWord(userStory);
+listStopWords=fopen('stopWords.txt');
+%opens the list of stop words
+   for i=1:length(userStory)
+   theWords=isStopWord(listStopWords,userStory);
+   %finds all of the stop words
    end
-   for i:length(theWords)
+   fclose(listStopWords)
+   for i=1:length(theWords)
        newWords=cleanWord(theWords);
+       %cleans all the words
    end
+   for i=1:length(newWords)
+       uniqueWords=getUniqueWords(newWords);
+       %finds all the unique words
    end
-   for i:length(newWords)
-       uniqueWords=getUniqueWords(newWords)
-   end
-   end
-   for i:length(uniqueWords)
+   for i=1:length(uniqueWords)
        topTenWords=getTopTenWords(uniqueWords);
+       %finds the top 10 words
    end
+   if userChoice==1
+       %creates a visualization
    wordcloud({uniqueWords.word},[uniqueWords.frequency]);
+   %creates word cloud
    
-   
-   
+   bar(topTenWords)
+   set(gca,'XTick',[1:10],'xticklabel',topTenWords) 
+   title('Most Frequent Words')
+   ylabel('Word Frequncies')
+   %creates bar graph
    
    
 else
     fprintf('Invalid Input. Terminating the Program')
+   end
