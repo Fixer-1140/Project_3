@@ -31,10 +31,10 @@ elseif userStory==2
     userStory=fopen('peterPan,txt');
 elseif userStory==3
     %if the user picked Snow Queen, opens it
-    userStory=('snowQueen.txt');
+    userStory=fopen('snowQueen.txt');
 elseif userStory==4
     %if the user picked velveteen rabbit, opens it
-    userStory=('velveteenRabbit.txt');
+    userStory=fopen('velveteenRabbit.txt');
 end
 
 listStopWords=fopen('stopWords.txt');
@@ -63,7 +63,7 @@ if userChoice==1
    wordcloud({uniqueWords.word},[uniqueWords.frequency]);
    %creates word cloud
    
-   bar(topTenWords)
+   bar(topTenWords,'color',[0.8500 0.3250 0.0980]))
    set(gca,'XTick',[1:10],'xticklabel',topTenWords) 
    title('Most Frequent Words')
    ylabel('Word Frequncies')
@@ -73,4 +73,3 @@ if userChoice==1
 else
     fprintf('Invalid Input. Terminating the Program')
    end
-    
