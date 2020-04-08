@@ -25,20 +25,28 @@ userStory=listdlg('ListString',list, 'SelectionMode','Single');
 
 if userStory==1
     %if the user picked Jack and the Beanstalk, opens it
-    userStory= fopen('jackBeanStalk.txt');
+    storyFID = fopen('jackBeanStalk.txt');
 elseif userStory==2
     %if the user picked Peter Pan, opens it
-    userStory=fopen('peterPan,txt');
+    storyFID = fopen('peterPan,txt');
 elseif userStory==3
     %if the user picked Snow Queen, opens it
-    userStory=fopen('snowQueen.txt');
+<<<<<<< HEAD
+    storyFID = fopen('snowQueen.txt');
 elseif userStory==4
     %if the user picked velveteen rabbit, opens it
-    userStory=fopen('velveteenRabbit.txt');
+    storyFID = fopen('velveteenRabbit.txt');
 end
 
-listStopWords=fopen('stopWords.txt');
+storyWords = textscan(storyFID,'%s','Delimiter',' ');
+storyWords = storyWords{1};
+fclose(storyFid);
+
+stopWordsFID = fopen('stopWords.txt');
+listStopWords = textscan(stopWordsFID,'%s');
+fclose(stopWordsFID);
 %opens the list of stop words
+
    for i=1:length(userStory)
    theWords=isStopWord(listStopWords,userStory);
     if theWords==1
