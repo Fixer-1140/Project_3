@@ -1,0 +1,13 @@
+Story Analyzed: Snow Queen
+Total Unique Words: 1974
+Frequency, Word
+147, little
+111, gerda
+107, said
+61, kay
+53, one
+40, snow
+36, now
+35, large
+34, will
+33, like

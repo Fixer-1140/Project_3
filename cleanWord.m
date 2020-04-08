@@ -1,7 +1,7 @@
 function [newWord] = cleanWord(word)
 %Zachary Boulton, ztboulto  and  Griffen Cook, gvcook
 %4/8/2020
-%Sections: 206 and 
+%Sections: 206 and 209
 %Project3: Story Analyzer, 2020 Spring
 %
 %"cleans" up a word for wordcloud

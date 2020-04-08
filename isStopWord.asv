@@ -12,6 +12,14 @@ function stopword = isStopWord(stopWords,word)
 %        stopWord: is logical(1)/TRUE if word IS a stopword otherwise it is
 %                  logical(0)/FALSE if it is NOT a stopword
 %
+for i = 1:length(word)
+    %Add all letters to newWord after making them lowercase
+    if isletter(word(i)) || ''''
+        newWord = [newWord,lower(word(i))];
+    end
+end
+
+stopword = ismember(word,stopWords);
 
 end
 
