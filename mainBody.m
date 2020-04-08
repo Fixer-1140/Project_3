@@ -71,7 +71,7 @@ if userChoice==1
    wordcloud({uniqueWords.word},[uniqueWords.frequency]);
    %creates word cloud
    
-   bar(topTenWords,'color',[0.8500 0.3250 0.0980]))
+   bar(topTenWords,'color',[0.8500 0.3250 0.0980])
    set(gca,'XTick',[1:10],'xticklabel',topTenWords) 
    title('Most Frequent Words')
    ylabel('Word Frequncies')
